@@ -190,7 +190,7 @@
 
         <script>
             function navigator(){
-                window.location.href = "book.html";
+                window.location.href = "book.php";
             }
         </script>
         <div>
