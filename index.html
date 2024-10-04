@@ -29,7 +29,7 @@
         }
 
         header {
-            height: 100vh;
+            height: 70vh;
             background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
                         url('saami.png') no-repeat center center/cover;
             display: flex;
@@ -52,7 +52,7 @@
         }
 
         nav ul li {
-            display: inline;
+            display: inline-block;
             margin: 0 15px;
         }
 
@@ -69,14 +69,15 @@
 
         header h1 {
             color: #fdd835;
-            font-size: 48px;
+            font-size: 3rem;
             font-weight: bold;
+            margin-bottom: 10px;
         }
 
         header p {
             font-style: italic;
             color: #eee;
-            font-size: 24px;
+            font-size: 1.5rem;
         }
 
         .contact-info, .location {
@@ -108,6 +109,52 @@
 
         strong {
             color: #333;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            header {
+                height: 50vh;
+            }
+
+            nav ul li {
+                display: block;
+                margin: 5px 0;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header p {
+                font-size: 1.2rem;
+            }
+
+            .contact-info h2, .location h2 {
+                font-size: 20px;
+            }
+
+            .contact-info p, .location p {
+                font-size: 16px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            header {
+                height: 40vh;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            nav ul li {
+                margin: 3px 0;
+            }
         }
     </style>
 </head>
