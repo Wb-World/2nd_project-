@@ -1,192 +1,224 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sri Lakshmi Narayanan Lodge</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sri Lakshmi Narayanan Residency</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Residency Website" />
+    <meta name="keywords" content="residency, accommodation, Sri Lakshmi Narayanan" />
+    <meta name="author" content="" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,600i,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="css/flexslider.css">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="css/style.css">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        .card {
+            height: 500px; /* Adjust this height if you want to make room for the larger image */
+            border: 2px solid black; /* Black outline for the card */
+            border-radius: 8px; /* Optional: round the corners */
+            padding: 10px; /* Padding inside the card */
+            transition: transform 0.3s; /* Animation for hover effect */
+            margin-bottom: 30px; /* Space between cards */
+        }
+    
+        .card:hover {
+            transform: scale(1.05); /* Slightly enlarge the card on hover */
+        }
+    
+        .card-img-top {
+            height: 300px; /* Adjusted height for images */
+            width: 100%; /* Make sure images stretch to full width */
+            object-fit: cover; /* Ensure the image covers the area while maintaining aspect ratio */
+        }
+    
+        .card-container {
+            margin-bottom: 50px; /* Add a margin to create space below the card container */
         }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background: #f2f2f2;
-            color: #333;
-            line-height: 1.6;
+        .book-now-button {
+            background-color: red; /* Red background color */
+            color: white; /* Suitable font color for red */
+            border: none; /* Remove default border */
+            padding: 10px 20px; /* Add some padding */
+            border-radius: 5px; /* Round the corners */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            font-size: 16px; /* Increase font size */
+            transition: background-color 0.3s; /* Smooth transition */
         }
 
-        .container {
-            width: 100%;
-            margin: 0;
-            padding: 20px;
-            text-align: center;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        .book-now-button:hover {
+            background-color: darkred; /* Darker red on hover */
         }
 
-        header {
-            height: 70vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                        url('saami.png') no-repeat center center/cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
+        #fh5co-header {
             position: relative;
+            height: 100vh; /* Full viewport height */
+            background-image: url(images/hero_1.jpeg);
+            background-size: cover; /* Cover the header */
+            background-position: center; /* Center the background image */
         }
 
-        nav {
+        #fh5co-header .overlay {
             position: absolute;
-            top: 10px;
-            right: 20px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
         }
 
-        nav ul {
-            list-style-type: none;
+        .fh5co-nav {
+            position: absolute;
+            width: 100%;
+            top: 20px; /* Adjust the top position of the navigation */
+            z-index: 1000; /* Bring nav to the front */
         }
 
-        nav ul li {
-            display: inline-block;
-            margin: 0 15px;
+        h1 {
+            margin-bottom: 0; /* Remove bottom margin */
         }
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
+        h2 {
+            margin-top: 0; /* Remove top margin */
+            margin-bottom: 20px; /* Add some space below the subtitle */
         }
 
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-
-        header h1 {
-            color: #fdd835;
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-style: italic;
-            color: #eee;
-            font-size: 1.5rem;
-        }
-
-        .contact-info, .location {
-            margin: 20px 0;
-        }
-
-        .contact-info h2, .location h2 {
-            color: #a10000;
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .contact-info p, .location p {
-            font-size: 18px;
-            color: #555;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        footer p {
-            font-size: 14px;
-        }
-
-        strong {
-            color: #333;
-        }
-
-        /* Responsive Styles */
-        @media screen and (max-width: 768px) {
-            header {
-                height: 50vh;
-            }
-
-            nav ul li {
-                display: block;
-                margin: 5px 0;
-            }
-
-            header h1 {
-                font-size: 2.5rem;
-            }
-
-            header p {
-                font-size: 1.2rem;
-            }
-
-            .contact-info h2, .location h2 {
-                font-size: 20px;
-            }
-
-            .contact-info p, .location p {
-                font-size: 16px;
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            header {
-                height: 40vh;
-            }
-
-            header h1 {
-                font-size: 2rem;
-            }
-
-            header p {
-                font-size: 1rem;
-            }
-
-            nav ul li {
-                margin: 3px 0;
-            }
-        }
     </style>
+    
+
+    <!-- Modernizr JS -->
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
-    <div class="container">
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#location">Location</a></li>
-                </ul>
-            </nav>
-            <h1>Sri Lakshmi Narayanan Lodge</h1>
-            <p>Rooms, Hall - Daily, Monthly Rent Available Here</p>
-        </header>
+    <div class="fh5co-loader"></div>
 
-        <section class="contact-info" id="contact">
-            <h2>Contact Information</h2>
-            <p><strong>J. Bakkialakshmi</strong></p>
-            <p>Cell: 9444417682</p>
-            <p>Other Contacts: 9597849687, 8667855765</p>
-        </section>
+    <div id="page">
+        <nav class="fh5co-nav" role="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-center logo-wrap">
+                        <img src="images/saami.png" alt="Residency Logo" style="width: 150px;height: 100px;">
+                    </div>
+                    <div class="col-xs-12 text-center menu-1 menu-wrap">
+                        <ul>
+                            <li class="active"><a href="index.html">Home</a></li>
+                            <li><a href="menu.html">Facilities</a></li>
+                            <li class="has-dropdown">
+                                <a href="gallery.html">Gallery</a>
+                            </li>
+                            <li><a href="reservation.html">Booking</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <div class="display-t js-fullheight">
+                            <div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn" style="padding-top: 30cap;">
+                                <h1>SRI LAKSHMI NARAYANAN RESIDENCY</h1>
+                                <h2>Welcome to our residency</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header><br>
 
-        <section class="location" id="location">
-            <h2>Location</h2>
-            <p>14/43, Puthu Street, Polur Road,<br>Tiruvannamalai - 606 601</p>
-        </section>
+        <div class="container card-container" style="padding-top: 15px;">
+            <h1 style="font: bold; color: dimgrey;">Our Rooms:</h1><br>
+            <div class="row">
+                <!-- First Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <center><h1 style="color: slategray;">Pack name</h1></center>
+                        <img src="images/gallery_1.jpeg" class="card-img-top" alt="Card 1">
+                        <div class="card-body">
+                            <p class="card-text" style="padding-top: 2px;">About that room.</p>
+                            <h1 style="color: cadetblue; padding-bottom: 30px;">Price : ₹ 15,000</h1> <!-- Increased padding-bottom -->
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Second Card (Duplicate of the First Card) -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <center><h1 style="color: slategray;">Pack name</h1></center>
+                        <img src="images/gallery_1.jpeg" class="card-img-top" alt="Card 2">
+                        <div class="card-body">
+                            <p class="card-text" style="padding-top: 2px;">About that room.</p>
+                            <h1 style="color: cadetblue; padding-bottom: 30px;">Price : ₹ 15,000</h1> <!-- Increased padding-bottom -->
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <center><h1 style="color: slategray;">Pack name</h1></center>
+                        <img src="images/gallery_1.jpeg" class="card-img-top" alt="Card 3">
+                        <div class="card-body">
+                            <p class="card-text" style="padding-top: 2px;">About that room.</p>
+                            <h1 style="color: cadetblue; padding-bottom: 30px;">Price : ₹ 15,000</h1> <!-- Increased padding-bottom -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <footer>
-            <p>&copy; 2024 Sri Lakshmi Narayanan Lodge. All rights reserved.</p>
+        <script>
+            function navigator(){
+                window.location.href = "reservation.html";
+            }
+        </script>
+        <div>
+            <center>
+                <button class="book-now-button" type="button" onclick="navigator()">Book Now!</button>
+            </center>
+        </div>
+        
+
+        <footer id="fh5co-footer" role="contentinfo">
+            <div class="container">
+                <div class="row copyright">
+                    <div class="col-md-12 text-center">
+                        <p>
+                            <small class="block">&copy; 2024 Sri Lakshmi Narayanan Residency. All Rights Reserved.</small>
+                            <small class="block">Designed by <a href="#" target="_blank">Your Name</a></small>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </footer>
     </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.flexslider-min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
