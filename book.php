@@ -94,7 +94,7 @@
 								<input type="text" required class="form-control" id="address">
 							</div>
 						</div>
-                                                <div class="row form-group">
+                        <div class="row form-group">
 							<div class="col-md-12">
 								<label for="aadhar">Your Aadhar Card number</label>
 								<input type="number" class="form-control" id="aadhar" minlength="12" maxlength="12" required pattern="\d{12}" title="Aadhar number must be 12 digits long" >
@@ -106,6 +106,17 @@
 								<input type="number" class="form-control" id="mobile" minlength="10" maxlength="10" required pattern="\d{12}" title="Mobile number must be 10 digits long" >
 							</div>
 						</div>
+                        <div class="row form-group">
+                            <div class="col-md-12">
+								<label for="mobile">Room Name</label>
+								<select class="form-control" id="building" required>
+                                    <option value="">Select Building</option>
+                                    <option value="Building A" style="color: darkgray;">Building A</option>
+                                    <option value="Building B" style="color: darkgray;">Building B</option>
+                                    <option value="Building C" style="color: darkgray;">Building C</option>
+                                </select>
+							</div>
+                        </div>
 						<div class="row form-group">
 							<div class="col-md-12">
 								<input type="submit" class="btn btn-primary btn-outline btn-lg" value="Submit Form">
