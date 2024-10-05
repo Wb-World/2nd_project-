@@ -115,7 +115,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 text-center logo-wrap">
-                        <img src="images/saami.png" alt="Residency Logo" style="width: 150px;height: 100px;">
+                        <img src="saami.png" alt="Residency Logo" style="width: 150px;height: 100px;">
                     </div>
                     <div class="col-xs-12 text-center menu-1 menu-wrap">
                         <ul>
